@@ -1,0 +1,148 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: $electric-blue;
+  font-family: "Alegreya", serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.01rem;
+  color: $gunmetal;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  text-rendering: geometricPrecision;
+}
+
+.sticker {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  p {
+    background-color: $canary;
+    color: $gunmetal;
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+main {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  svg#island {
+    width: 40%;
+    height: auto;
+    @include breakpoint(tablet) {
+      width: 65%;
+      margin-top: 50px;
+      margin-bottom: -50px;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      padding: 10px;
+      margin-top: 30px;
+      margin-bottom: -50px;
+    }
+  }
+  .textbox {
+    text-align: center;
+    width: 40%;
+    @include breakpoint(tablet) {
+      width: 65%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      padding: 10px;
+    }
+    svg#forwird {
+      width: 75%;
+      height: auto;
+      @include breakpoint(mobile) {
+        width: 100%;
+      }
+    }
+    h2 {
+      margin: 15px 0;
+    }
+    p {
+      margin: 15px 0;
+      line-height: 1.15;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > * {
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        color: inherit;
+      }
+    }
+    input {
+      border-radius: 5px 0 0 5px;
+      border: none;
+      box-sizing: border-box;
+      padding: 0 10px;
+      width: 50%;
+      text-align: right;
+      color: $gunmetal;
+      font-family: "Alegreya", serif;
+      transition: background-color 250ms linear;
+      height: 40px;
+      &:focus {
+        outline-color: $canary;
+      }
+    }
+    button {
+      background-color: $canary;
+      color: $gunmetal;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      padding: 0 10px;
+      font-family: "Alegreya", serif;
+      vertical-align: middle;
+      height: 40px;
+      &:hover {
+        cursor: pointer;
+        background-color: darken($canary, 10%);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  @include breakpoint(tablet) {
+    position: relative;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+  }
+  h6 {
+    position: relative;
+    left: -50%;
+    margin-bottom: 10px;
+    @include breakpoint(tablet) {
+      left: 0;
+    }
+  }
+}

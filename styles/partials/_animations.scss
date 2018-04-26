@@ -1,0 +1,20 @@
+@keyframes blink {
+  90% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#island {
+  .sclera {
+    animation: blink 3s 7s infinite;
+  }
+  .pupil {
+    animation: blink 3s 7s infinite;
+  }
+}
