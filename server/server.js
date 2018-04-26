@@ -24,6 +24,18 @@ app.use(
 );
 app.use(flash());
 
+/*** MIDDLEWARE FOR HEROKU REDIRECT (HTTP TO HTTPS) ***/
+
+if (process.env.NODE_ENV === "production") {
+  app.use((req, res, next) => {
+    if (req.header("x-forwarded-proto") !== "https") {
+      res.redirect(`https://${req.header("host")}${req.url}`);
+    } else {
+      next();
+    }
+  });
+}
+
 app.engine("hbs", handlebars());
 app.set("view engine", "hbs");
 app.set("views", publicPath);
